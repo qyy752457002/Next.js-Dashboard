@@ -11,6 +11,8 @@ import {
 import { formatCurrency } from './utils';
 import { unstable_noStore as noStore } from 'next/cache';
 
+// 每一个函数的作用: 从数据库中，获取对应每个table的数据
+
 export async function fetchRevenue() {
   // Add noStore() here to prevent the response from being cached.
   // This is equivalent to in fetch(..., {cache: 'no-store'}).
@@ -98,7 +100,6 @@ export async function fetchFilteredInvoices(
   query: string,
   currentPage: number,
 ) {
-
   noStore();
 
   const offset = (currentPage - 1) * ITEMS_PER_PAGE;

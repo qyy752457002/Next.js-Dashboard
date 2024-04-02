@@ -161,11 +161,17 @@ async function seedRevenue(client) {
 }
 
 async function main() {
+
+  // 与数据库建立连接
   const client = await db.connect();
 
+  // 数据库中建立 Users schema，往 Users 中插入数据
   await seedUsers(client);
+  // 数据库中建立 Customers schema，往 Customers 中插入数据
   await seedCustomers(client);
+  // 数据库中建立 Invoices schema，往 Invoices 中插入数据
   await seedInvoices(client);
+  // 数据库中建立 Revenue schema，往 Revenue 中插入数据
   await seedRevenue(client);
 
   await client.end();
