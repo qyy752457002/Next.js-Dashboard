@@ -12,7 +12,7 @@ import {
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'dashboard',
+  title: 'Home',
 };
 
 /*
@@ -43,22 +43,30 @@ export const metadata: Metadata = {
 
 */
  
+// 这是一个异步函数组件，用于呈现页面
 export default async function Page() {
   
   return (
+    // 页面的主要内容部分
     <main>
+      {/* 页面标题 */}
       <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
         Dashboard
       </h1>
+      {/* 卡片区域 */}
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {/* 加载 CardWrapper 组件，显示加载占位符 */}
         <Suspense fallback={<CardsSkeleton />}>
           <CardWrapper />
         </Suspense>
       </div>
+      {/* 统计图表和最新发票区域 */}
       <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">
+        {/* 加载 RevenueChart 组件，显示加载占位符 */}
         <Suspense fallback={<RevenueChartSkeleton />}>
           <RevenueChart />
         </Suspense>
+        {/* 加载 LatestInvoices 组件，显示加载占位符 */}
         <Suspense fallback={<LatestInvoicesSkeleton />}>
           <LatestInvoices />
         </Suspense>
