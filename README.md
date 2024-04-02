@@ -1,7 +1,6 @@
 ## Next.js App Router Course - Starter
 
-URL: https://next-js-dashboard-phi-vert.vercel.app/login?callbackUrl=https%3A%2F%2Fnext-js-dashboard-phi-vert.vercel.app%2Fdashboard
-
+URL: https://next-js-dashboard-seven-plum.vercel.app/login?callbackUrl=https%3A%2F%2Fnext-js-dashboard-seven-plum.vercel.app%2Fdashboard
 
 This is the starter template for the Next.js App Router Course. It contains the starting code for the dashboard application.
 
