@@ -20,12 +20,14 @@ async function getUser(email: string): Promise<User | undefined> {
 export const { auth, signIn, signOut } = NextAuth({
   ...authConfig,
 
-  /*
-    可以使用该authorize函数来处理身份验证逻辑。
-    与服务器操作类似，您可以zod在检查用户是否存在于数据库中之前验证电子邮件和密码。
-  */
+  // Credentials 提供程序允许用户使用用户名和密码登录。
   providers: [
     Credentials({
+
+      /*
+        可以使用该authorize函数来处理身份验证逻辑。
+        与服务器操作类似，您可以zod在检查用户是否存在于数据库中之前验证电子邮件和密码。
+      */
       async authorize(credentials) {
         const parsedCredentials = z
           .object({ email: z.string().email(), password: z.string().min(6) })
